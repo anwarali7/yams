@@ -1,0 +1,10 @@
+node_modules/
+dist/
+package-lock.json
+yams/pnpm-lock.yaml
+__pycache__/
+venv/
+
+docker-api-mongo/app/pnpm-lock.yaml
+
+
