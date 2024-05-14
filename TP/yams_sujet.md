@@ -54,6 +54,48 @@ graph TD;
     D -- Non --> F[Fin du jeu];
 ```
 
+## Proposition d'organisation des dossiers d'un projet React avec Redux
+
+```txt
+my-react-redux-app/
+  ├── public/
+  │   └── index.html
+  ├── src/
+  │   ├── pages/
+  │   │   └── ...
+  │   ├── components/
+  │   │   └── ...
+  │   ├── features/                     # Organisé par fonctionnalités
+  │   │   ├── feature1/
+  │   │   │   └── Feature1Page.jsx      # Page principale de feature1
+  │   │   ├── feature2/
+  │   │   │   └── Feature2Page.jsx      # Page principale de feature2
+  │   │   └── ...
+  │   ├── store/
+  │   │   └── index.js
+  │   ├── services/                  
+  │   │   └── game.js   
+  │   ├── App.jsx
+  │   └── index.jsx
+  ├── package.json
+  └── ...
+```
+
+
+1. **features** contient des sous-dossiers pour chaque fonctionnalité de l'application.
+Vous pouvez également avoir dans ce dossier des dossiers spécifiques à la fonctionnalité, tels que components, actions, reducers, types ( pour TypeScript), etc.
+
+On va imposer pour le projet un unique fichier par feature.
+
+1. **Pages** :
+   - Les pages représentent les différentes vues ou routes de votre application. Chaque page est généralement associée à une URL spécifique dans votre application. Par exemple, `/home`, `/dashboard`, `/profile`, etc.
+   - Les pages sont généralement des composants React de plus haut niveau qui définissent la structure de votre application et affichent les données spécifiques à chaque route.
+   - Les pages peuvent contenir d'autres composants React, tels que des composants de présentation, des composants de mise en page, des composants de navigation, etc.
+
+1. **Components** :
+   - Les composants sont des éléments réutilisables de votre interface utilisateur. Ils peuvent être utilisés à plusieurs endroits de votre application pour afficher des parties spécifiques de l'interface utilisateur.
+
+
 ## Contraintes techniques API
 
 🔗 [api](https://github.com/Antoine07/yams-project/)
