@@ -1,0 +1,68 @@
+.welcome-text {
+  text-align: center;
+  margin: auto;
+  margin-bottom: 50px;
+  font-size: larger;
+}
+
+.dices {
+  display: flex;
+  gap: 15px;
+}
+
+.three-prizes {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.three-prizes:not(:last-child) {
+  margin-right: 60px;
+}
+
+.one-prize {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.one-prize div {
+  margin-bottom: 10px;
+}
+
+.prize-title {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.btn-play {
+  width: 280px;
+  height: 60px;
+  background-color: #df1160;
+  border-radius: 10px;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.btn-play:focus,
+.btn-play:hover {
+  background-color: #b80a4c;
+}
+
+.rules-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rules-link a {
+}
