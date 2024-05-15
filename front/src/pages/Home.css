@@ -12,24 +12,24 @@
 
 .three-prizes {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   margin-bottom: 30px;
 }
 
-.three-prizes:not(:last-child) {
-  margin-right: 60px;
-}
-
 .one-prize {
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .one-prize div {
   margin-bottom: 10px;
+}
+
+.pastries {
+  display: none;
 }
 
 .prize-title {
@@ -64,5 +64,16 @@
   align-items: center;
 }
 
-.rules-link a {
+@media screen and (min-width: 768px) {
+  .three-prizes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 60px;
+  }
+
+  .pastries {
+    display: block;
+  }
 }
