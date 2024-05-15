@@ -21,6 +21,9 @@ const SharedLayout = () => {
           <NavLink to="/results" className="navLink">
             Résultats
           </NavLink>
+          <NavLink to="/dashboard" className="navLink">
+            Tableau de bord
+          </NavLink>
         </div>
         <div className="connection">
           <img src={user} alt="user-icon" width="20" height="20" />
