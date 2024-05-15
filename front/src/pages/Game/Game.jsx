@@ -18,15 +18,14 @@ const Game = () => {
   const [rollsLeft, setRollsLeft] = useState(3);
 
   const handleRollClick = () => {
-    let newRollsLeft = null;
-    if (rollsLeft === "aze") {
-      newRollsLeft = "Azert azerty azertyuiop wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
-    } else {
-      newRollsLeft = "aze";
+    let newRollsLeft = 0;
+    if (rollsLeft > 0) {
+      newRollsLeft = rollsLeft - 1;
     }
 
     setRollsLeft(newRollsLeft);
   }
+
 
   return (
     <div className={styles["game-page"]}>
@@ -60,14 +59,14 @@ const Game = () => {
               </tr>
               <tr>
                 <td>3</td>
-                <td>- {rollsLeft}</td>
+                <td>-</td>
               </tr>
             </tbody>
           </table>
         </div>
         <button type="button" onClick={handleRollClick} className={styles["roll-btn"]}>
           <img src={logo} alt="rolling dices" />
-          (Nb de lancers restants)
+          {rollsLeft}
         </button>
       </div>
       <div className={styles["pastries"]}>
