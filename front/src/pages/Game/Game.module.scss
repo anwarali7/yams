@@ -89,10 +89,22 @@
   font-size: 1.2rem;
   cursor: pointer;
   white-space: nowrap;
+
+  &:hover {
+    filter: grayscale(5%);
+  }
+
+  &[disabled] {
+    filter: grayscale(35%);
+    cursor: not-allowed;
+  }
 }
 
-.roll-btn:hover {
-  opacity: calc(1 - 0.1);
+.win-message {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 25px;
 }
 
 @media (max-width: 768px) {
