@@ -1,0 +1,52 @@
+.you-won-text {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.prizes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.prize-img {
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+
+.prize-img-container {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.prize-title {
+  font-size: 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .you-won-text {
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .prizes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .prize-img-container {
+    width: 400px;
+    height: 400px;
+  }
+
+  .prize-title {
+    font-size: 24px;
+  }
+}
