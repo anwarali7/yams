@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Game from './pages/Game';
 import Results from './pages/Results';
 import Rules from './pages/Rules';
+import Dashboard from './pages/Dashboard'
 import LogIn from './pages/LogIn';
 import SharedLayout from './components/SharedLayout';
 import './App.css';
@@ -16,6 +17,7 @@ function App() {
           <Route path="game" element={<Game />} />
           <Route path="results" element={<Results />} />
           <Route path="rules" element={<Rules />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="login" element={<LogIn />} />
         </Route>
       </Routes>

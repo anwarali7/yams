@@ -1,10 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
-import resultsReducer from '../features/results/resultsSlice';
+import { setupListeners } from '@reduxjs/toolkit/query';
+import { yamsApi } from 'src/features/yams-api/yamsApi.jsx';
+import pastriesWonReducer from '../features/pastriesWon/pastriesWonSlice';
 
 const store = configureStore({
   reducer: {
-    results: resultsReducer,
+    pastriesWon: pastriesWonReducer,
+    [yamsApi.reducerPath]: yamsApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(yamsApi.middleware),
 });
+
+setupListeners(store.dispatch);
 
 export default store;

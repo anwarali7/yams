@@ -19,7 +19,7 @@
 
 .results {
   grid-area: results;
-  
+
   background-color: #FFB2B2;
   padding: 10px;
   border-radius: 6px;
@@ -38,7 +38,8 @@
       padding: 10px;
     }
 
-    th, td {
+    th,
+    td {
       min-width: 120px;
       max-width: 120px;
       text-overflow: clip;
@@ -107,6 +108,28 @@
   padding: 25px;
 }
 
+.pastries {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+
+
+.pastries-img-container {
+  width: 250px;
+  height: 250px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.pastries-img {
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .game-layout {
     grid-template-columns: auto auto;
@@ -114,5 +137,9 @@
     grid-template-areas:
       "dices dices"
       "results roll-btn";
+  }
+
+  .pastries-img-container {
+    display: none;
   }
 }

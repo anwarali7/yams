@@ -5,10 +5,11 @@ import {
   diceThree,
   diceFour,
   diceFive,
+  eclair,
+  fondant,
+  tartelette
 } from 'src/images';
-import eclair from 'src/images/eclair.png';
-import fondant from 'src/images//fondant.png';
-import tartelette from 'src/images/tartelette-framboise.png';
+
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
