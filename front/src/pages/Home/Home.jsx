@@ -1,12 +1,14 @@
 import './Home.css';
-import diceOne from '../images/dice-one-svgrepo-com 1.svg';
-import diceTwo from '../images/dice-two-svgrepo-com 1.png';
-import diceThree from '../images/dice-three-svgrepo-com.png';
-import diceFour from '../images/dice-four-svgrepo-com.png';
-import diceFive from '../images/dice-five-svgrepo-com.png';
-import eclair from '../images/eclair.png';
-import fondant from '../images//fondant.png';
-import tartelette from '../images/tartelette-framboise.png';
+import {
+  diceOne,
+  diceTwo,
+  diceThree,
+  diceFour,
+  diceFive,
+} from 'src/images';
+import eclair from 'src/images/eclair.png';
+import fondant from 'src/images//fondant.png';
+import tartelette from 'src/images/tartelette-framboise.png';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
