@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Outlet, NavLink } from 'react-router-dom';
+import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../images/rolling-dices-svgrepo-com.svg';
 import { useMeQuery, useLogoutMutation } from 'src/services/authApi.jsx';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,12 +13,14 @@ const SharedLayout = () => {
   const [logoutMutation] = useLogoutMutation();
   const loginData = useSelector((state) => state.login);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
       await logoutMutation();
       // logout from store
       dispatch(logout());
+      navigate('/login');
     } catch (error) {
       console.error('Logout failed:', error);
     }
