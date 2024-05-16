@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const urlApi = 'http://localhost:3001';
+const urlApi = 'http://localhost:3001/api/';
 
 export const pastriesApi = createApi({
   reducerPath: 'pastriesApi',
-  baseQuery: fetchBaseQuery({ baseUrl: urlApi }),
+  baseQuery: fetchBaseQuery({ baseUrl: urlApi, credentials: 'include'}),
   endpoints: (builder) => ({
     getAllPastries: builder.query({
-      query: () => `pastry/pastries`,
+      query: () => `pastries`,
     }),
     getPastryById: builder.query({
       query: () => `pastry/pastry/${id}`,
