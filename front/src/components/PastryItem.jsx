@@ -6,8 +6,6 @@ import './PastryItem.css';
 const PastryItem = ({data, onChange}) => {
 
   const [deletePastry] = useDeletePastryByIdMutation()
-
-  console.log(data);
   
   return (
     <>
