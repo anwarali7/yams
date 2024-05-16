@@ -26,9 +26,6 @@
   font-weight: 500;
 }
 
-/* .navLink:active {
-  color: black;
-} */
 
 .main-content {
   color: white;
@@ -41,6 +38,28 @@
 }
 
 .connection {
-  display: flex;
+   display: inline-flex;
   align-items: center;
+}
+
+.user-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-info button{
+  background-color: #df1160;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  border-color: white;
+}
+
+.user-info button:focus,
+.user-info button:hover {
+  background-color: #b80a4c;
 }
