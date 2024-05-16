@@ -1,12 +1,12 @@
-.form-container{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.login-form{
-max-width: 300px;
+.login-form {
+  max-width: 300px;
   margin: 20px auto;
   padding: 20px;
 }
@@ -30,13 +30,14 @@ input {
 }
 
 
-.form-field{}
+.form-field {
+  margin-bottom: 10px;
+}
 
 input:focus,
 input:hover {
-  box-shadow: 0 0 5px  #df1160;
-  padding: 3%;
-  border: 1px solid  #df1160;
+  box-shadow: 0 0 5px #df1160;
+  border: 2px solid #df1160;
 }
 
 
@@ -45,7 +46,7 @@ input:hover {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  
+
 }
 
 .btn-submit {
