@@ -1,18 +1,17 @@
-.form-container{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.login-form{
-max-width: 300px;
+.login-form {
+  max-width: 300px;
   margin: 20px auto;
   padding: 20px;
 }
 
-
-input {
+.form-field input {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
@@ -29,23 +28,18 @@ input {
   font: 95% Arial, Helvetica, sans-serif;
 }
 
-
-.form-field{}
-
-input:focus,
-input:hover {
-  box-shadow: 0 0 5px  #df1160;
+.form-field input:focus,
+.form-field input:hover {
+  box-shadow: 0 0 5px #df1160;
   padding: 3%;
-  border: 1px solid  #df1160;
+  border: 1px solid #df1160;
 }
-
 
 .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  
 }
 
 .btn-submit {
@@ -55,6 +49,7 @@ input:hover {
   border-radius: 10px;
   font-size: 20px;
   cursor: pointer;
+  color: white;
 }
 
 .btn-submit:focus,
