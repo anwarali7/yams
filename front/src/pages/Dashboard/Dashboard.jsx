@@ -13,6 +13,11 @@ const Dashboard = () => {
   const handleShowAddPastryForm = () => {
     setShowPastryList(false);
   };
+
+  const handlePastryAdded = () => {
+    setShowPastryList(true);
+  }
+
   return (
     <div>
       <div className="dashboard-container">
@@ -24,7 +29,7 @@ const Dashboard = () => {
             Ajouter pâtisserie
           </button>
         </div>
-        {showPastryList ? <PastryList /> : <AddPastryForm />}
+        {showPastryList ? <PastryList /> : <AddPastryForm onPastryAdd={handlePastryAdded}/>}
       </div>
     </div>
   );

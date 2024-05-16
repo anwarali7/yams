@@ -26,8 +26,10 @@ export const pastriesApi = createApi({
       query: () => `pastries-count`,
     }),
     addOnePastry: builder.mutation({
+      // {name: 'name', quantity: 'quantity', choice: 'choice', image: 'image'}
+      // required: name, quantity
       query: (pastry) => ({
-        url: 'pastry/pastry',
+        url: 'pastry',
         method: 'POST',
         body: pastry,
       }),
