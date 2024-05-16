@@ -35,8 +35,10 @@ export const pastriesApi = createApi({
       }),
     }),
     editPastryById: builder.mutation({
+      // pastry : {?name, ?quantity, ?choice, ?image}, all fields are optional
+      // id has to be provided
       query: ({ id, pastry }) => ({
-        url: `pastry/pastry/${id}`,
+        url: `pastry/${id}`,
         method: 'PUT',
         body: pastry,
       }),
