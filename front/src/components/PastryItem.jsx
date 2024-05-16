@@ -1,18 +1,21 @@
 import { fondant } from 'src/images';
+
 import './PastryItem.css';
 
-const PastryItem = () => {
+const PastryItem = (data) => {
   return (
     <>
-      <div className="pastry-card">
-        <img src={fondant} />
-        <div>Fondant supreme</div>
-        <div>Quantité: 3</div>
-        <div className="btn-pastry-actions">
-          <button>Modifier</button>
-          <button>Supprimer</button>
+      {data.map((pastry) => (
+        <div className="pastry-card">
+          <img src={fondant} />
+          <div>{pastry.name}</div>
+          <div>Quantité: {pastry.quantity}</div>
+          <div className="btn-pastry-actions">
+            <button>Modifier</button>
+            <button>Supprimer</button>
+          </div>
         </div>
-      </div>
+      ))}
     </>
   );
 };
