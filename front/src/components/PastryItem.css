@@ -1,0 +1,38 @@
+.pastry-card {
+  background-color: #df1160;
+  width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.pastry-card img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-pastry-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-pastry-actions button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: none;
+  text-decoration: underline;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}

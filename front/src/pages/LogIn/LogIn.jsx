@@ -39,7 +39,7 @@ const LogIn = () => {
     <div className='form-container'>
       <form className='login-form' onSubmit={handleSubmit}>
         <h2>Se connecter</h2>
-        <div className='form-field'>
+        <div className="form-field">
           <label htmlFor="email">Adresse mail</label>
           <input type="email" id="email" required placeholder="example@host.com" />
         </div>
@@ -47,11 +47,14 @@ const LogIn = () => {
           <label htmlFor="password">Mot de passe</label>
           <input type="password" id="password" required placeholder="Mot de passe" />
         </div>
-        <div className='button-container'>
-          <button type="submit" className='btn-submit'>Connexion</button>
+        <div className="button-container">
+          <button type="submit" className="btn-submit">
+            Connexion
+          </button>
         </div>
       </form>
-    </div>);
+    </div>
+  );
 };
 
 export default LogIn;

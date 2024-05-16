@@ -1,0 +1,58 @@
+.pastry-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pastry-list p {
+  color: black;
+}
+
+.search-box-wrapper {
+  display: inline-flex;
+  font-size: 16px;
+}
+
+.search-box-input {
+  font-size: inherit;
+  border: 0.2em solid #f68fb7;
+  border-radius: 0.5em 0 0 0.5em;
+  padding: 0.2em 0.5em;
+  outline: 0;
+  width: 300px;
+  font-style: italic;
+}
+
+.search-box-input:hover,
+.search-box-input:focus {
+  border-color: #df1160;
+}
+
+.search-box-button {
+  font-size: inherit;
+  border: 0.2em solid #f68fb7;
+  border-radius: 0 0.5em 0.5em 0;
+  background-color: #f68fb7;
+  border-left: 0;
+  padding: 0 0.75em;
+  color: white;
+  font-weight: bold;
+  outline: 0;
+  cursor: pointer;
+}
+
+.search-box-button:hover,
+.search-box-button:focus {
+  border-color: #df1160;
+  background-color: #df1160;
+}
+
+/* List of pastries */
+.pastries-wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
