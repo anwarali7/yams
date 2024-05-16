@@ -1,26 +1,32 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useLoginMutation, useMeQuery } from 'src/services/authApi.js';
+import { useLoginMutation } from 'src/services/authApi.jsx';
+import { login } from 'src/features/login/loginSlice.jsx';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './LogIn.css';
 
 const LogIn = () => {
-  const [login, { isLoading, isError }] = useLoginMutation();
-  const { data: meData } = useMeQuery();
+  const [loginMutation, { isLoading, isError }] = useLoginMutation();
+  const loginData = useSelector((state) => state.login);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // check if loggedin in store instead of fetching me
   useEffect(() => {
-    if (meData && meData.email) {
+    if (loginData.loggedIn) {
       navigate('/dashboard');
     }
-  }, [meData, navigate]);
+  }, [loginData, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.currentTarget.email.value;
     const password = e.currentTarget.password.value;
     try {
-      await login({ email, password });
+      const loginData = await loginMutation({ email, password });
+      // set loggedin user id in the store
+      dispatch(login(loginData.data.id));
       navigate('/dashboard');
     } catch (error) {
       // Handle login error
