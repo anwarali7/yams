@@ -47,15 +47,17 @@ const SharedLayout = () => {
           <NavLink to="/results" className="navLink">
             Résultats
           </NavLink>
+          {loginData && loginData.loggedIn && (
           <NavLink to="/dashboard" className="navLink">
             Tableau de bord
           </NavLink>
+          )}
         </div>
         <div className="connection">
           <img src={user} alt="user-icon" width="20" height="20" />
           {loginData && loginData.loggedIn ? (
             <div className="user-info">
-              <p>{meData.email}</p>
+              <p>{meData?.email}</p>
               <button type="button" onClick={handleLogout}>
                 Se déconnecter
               </button>
