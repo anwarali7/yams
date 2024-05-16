@@ -1,0 +1,26 @@
+.dashboard-container {
+  background-color: #ffb2b2;
+  padding: 20px;
+}
+
+.dashboard-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-toggle {
+  background-color: #df1160;
+  color: inherit;
+  border: none;
+  padding: 5px 15px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.btn-toggle:focus,
+.btn-toggle:hover {
+  text-decoration: underline;
+}

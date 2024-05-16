@@ -11,5 +11,6 @@ import fondant from 'src/images/fondant.png';
 import tartelette from 'src/images/tartelette-framboise.png';
 import brioche from 'src/images/brioche.webp';
 import macarons from 'src/images/macaron.webp';
+import loupe from 'src/images/loupe.png';
 
-export { logo, diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix, diceQuestion, eclair, fondant, tartelette, brioche, macarons };
+export { logo, diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix, diceQuestion, eclair, fondant, tartelette, brioche, macarons, loupe };
