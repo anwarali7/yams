@@ -1,18 +1,29 @@
+import { useDeletePastryByIdMutation } from 'src/features/pastries-api/pastriesApi';
 import { fondant } from 'src/images';
 
 import './PastryItem.css';
 
-const PastryItem = (data) => {
+const PastryItem = ({data, onChange}) => {
+
+  const [deletePastry] = useDeletePastryByIdMutation()
+
+  console.log(data);
+  
   return (
     <>
       {data.map((pastry) => (
-        <div className="pastry-card">
-          <img src={fondant} />
+        <div className="pastry-card" key={pastry.id}>
+          {/* <img src={fondant} /> */}
+          <img src={pastry.image} />
+
           <div>{pastry.name}</div>
           <div>Quantité: {pastry.quantity}</div>
           <div className="btn-pastry-actions">
             <button>Modifier</button>
-            <button>Supprimer</button>
+            <button type="button" onClick={() => {
+              deletePastry(pastry.id)
+              onChange()
+            }}>Supprimer</button>
           </div>
         </div>
       ))}

@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import {
   useGetAllPastriesQuery,
+  useGetAllPastryCountQuery,
   useAddOnePastryMutation,
   useDeletePastryByIdMutation,
 } from 'src/features/pastries-api/pastriesApi.jsx';
@@ -8,7 +10,18 @@ import PastryItem from './PastryItem';
 import './PastryList.css';
 
 const PastryList = () => {
-  const { data, error, isLoading } = useGetAllPastriesQuery();
+  const { data, error, isLoading, refetch: refetchAllPastries } = useGetAllPastriesQuery();
+  const { data: pastriesCount, refetch: refetchPastriesCount } = useGetAllPastryCountQuery();
+
+  const handlePastriesChange = () => {
+    refetchAllPastries();
+    refetchPastriesCount();
+  }
+
+  useEffect(() => {
+    refetchAllPastries();
+    refetchPastriesCount();
+  }, [])
 
   if (isLoading) {
     return <div className="message">Loading...</div>;
@@ -24,7 +37,7 @@ const PastryList = () => {
 
   return (
     <div className="pastry-list">
-      <p>Nombre de pâtisseries : 30</p>
+      <p>Nombre de pâtisseries : {pastriesCount}</p>
 
       <div className="search-box-wrapper">
         <input
@@ -35,7 +48,7 @@ const PastryList = () => {
         <button className="search-box-button">&#128269;</button>
       </div>
       <div className="pastries-wrapper">
-        <PastryItem data={data} />
+        <PastryItem data={data} onChange={handlePastriesChange} />
       </div>
     </div>
   );

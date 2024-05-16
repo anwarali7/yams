@@ -23,7 +23,7 @@ export const pastriesApi = createApi({
         `pastry/pastries/order-quantity/${offset}/${limit}`,
     }),
     getAllPastryCount: builder.query({
-      query: () => `pastry/pastries-count`,
+      query: () => `pastries-count`,
     }),
     addOnePastry: builder.mutation({
       query: (pastry) => ({
@@ -41,7 +41,7 @@ export const pastriesApi = createApi({
     }),
     deletePastryById: builder.mutation({
       query: (id) => ({
-        url: `pastry/pastry/${id}`,
+        url: `pastry/${id}`,
         method: 'DELETE',
       }),
     }),
