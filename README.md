@@ -10,6 +10,7 @@ Les fonctionnalités sont :
 
 Les technologies utilisées sont :
 
+- Vite.js, pour le développement du front-end.
 - React, offrant une expérience utilisateur fluide.
 - React-Router, permettant une navigation dynamique et efficace entre les différentes pages de l'application.
 - React Toolkit, pour la gestion cohérente de l’état de l’application.
@@ -21,3 +22,7 @@ Organisation du projet :
 - Nous avons utilisé des outils de maquettage et gestion de projet, tels que Figma, Trello, Git et Github.
 
 **Pour conclure**, on vous invite à plonger dans l'univers sucré de Yams, de jouer pour gagner et de gérer votre boutique de pâtisseries avec facilité.
+
+
+**Liens**  
+https://www.figma.com/design/Vcbz7ngqprUeEGQAPtyCxZ/Untitled?node-id=0%3A1&t=8rwzYDvvdYQxxijw-1
