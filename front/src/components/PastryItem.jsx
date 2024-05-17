@@ -3,17 +3,22 @@ import { useState } from 'react';
 import { fondant } from 'src/images';
 import PastryPopup from './PastryPopup';
 
-
 import './PastryItem.css';
 
-const PastryItem = ({data, onChange}) => {
-const [showModal, setShowModal] = useState(false)
+const PastryItem = ({ data, onChange }) => {
+  const [showModal, setShowModal] = useState(false)
   const [deletePastry] = useDeletePastryByIdMutation()
+  const [pastryToEdit, setPastryToEdit] = useState(null)
 
-  const handleEditPastry =()=>{
-setShowModal(true)
+  const handleEditPastry = (pastryToEdit) => {
+    setPastryToEdit(pastryToEdit)
+    setShowModal(true)
   }
-  
+
+  const handleCloseModal = () => {
+    setShowModal(false)
+  }
+
   return (
     <>
       {data.map((pastry) => (
@@ -24,7 +29,7 @@ setShowModal(true)
           <div>Quantité: {pastry.quantity}</div>
           <div className="btn-pastry-actions">
             <button type="button" onClick={() => {
-              handleEditPastry()
+              handleEditPastry(pastry)
             }} >Modifier</button>
             <button type="button" onClick={() => {
               deletePastry(pastry.id)
@@ -33,7 +38,7 @@ setShowModal(true)
           </div>
         </div>
       ))}
-      {showModal && <PastryPopup />}
+      {showModal && <PastryPopup pastry={pastryToEdit} onClose={handleCloseModal} onEdit={onChange} />}
     </>
   );
 };

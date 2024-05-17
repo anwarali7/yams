@@ -55,10 +55,20 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .message {
   margin-top: 30px;
   color: black;
   text-align: center;
+}
+
+@media (max-width: 500px) {
+  .search-box-input {
+    width: 200px;
+  }
 }
