@@ -10,17 +10,17 @@ export const pastriesApi = createApi({
       query: () => `pastries`,
     }),
     getPastryById: builder.query({
-      query: () => `pastry/pastry/${id}`,
+      query: () => `pastry/${id}`,
     }),
     getPastryBySearch: builder.query({
       query: (word) => `pastries-search/${word}`,
     }),
     getAllPastryWithPagination: builder.query({
-      query: ({ offset = 0, limit }) => `pastry/pastries/${offset}/${limit}`,
+      query: ({ offset = 0, limit }) => `pastries/${offset}/${limit}`,
     }),
     getAllPastrySortedByQuality: builder.query({
       query: ({ offset = 0, limit }) =>
-        `pastry/pastries/order-quantity/${offset}/${limit}`,
+        `pastries/order-quantity/${offset}/${limit}`,
     }),
     getAllPastryCount: builder.query({
       query: () => `pastries-count`,

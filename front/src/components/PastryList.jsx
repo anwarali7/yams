@@ -15,20 +15,21 @@ const PastryList = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const { data, error, isLoading, refetch: refetchAllPastries } = useGetAllPastriesQuery();
   const { data: pastriesCount, refetch: refetchPastriesCount } = useGetAllPastryCountQuery();
-  const {data: pastriesSearch, refetch: refetchPastriesSearch } = useGetPastryBySearchQuery(searchQuery, {
-    skip: !searchQuery});
+  const { data: pastriesSearch, error: searchError, refetch: refetchPastriesSearch } = useGetPastryBySearchQuery(searchQuery, {
+    skip: !searchQuery
+  });
 
   const handlePastriesChange = () => {
     refetchAllPastries();
     refetchPastriesCount();
   }
 
-  const handlePastriesSearchChange = (e) =>{
+  const handlePastriesSearchChange = (e) => {
     setSearchQuery(e.target.value)
   }
-  const handlePastriesSearch =() =>{
-    if(searchQuery)
-    refetchPastriesSearch();
+  const handlePastriesSearch = () => {
+    if (searchQuery)
+      refetchPastriesSearch();
   }
 
   useEffect(() => {
@@ -44,11 +45,12 @@ const PastryList = () => {
     return <div className="message">{error.message}</div>;
   }
 
-const displayData = searchQuery && pastriesSearch ? [pastriesSearch] : data;
+  const displayData = searchQuery && pastriesSearch ? [pastriesSearch] : data;
+
 
 
   if (!displayData || displayData.length === 0) {
-    return <div className="message">Pas de pâtisseries disponibles</div>;
+    return <div className="message">Pas de pâtisserie disponible.</div>;
   }
 
   return (
@@ -63,11 +65,15 @@ const displayData = searchQuery && pastriesSearch ? [pastriesSearch] : data;
           value={searchQuery}
           onChange={handlePastriesSearchChange}
         />
-        <button onClick={handlePastriesSearch}  className="search-box-button">&#128269;</button>
+        <button onClick={handlePastriesSearch} className="search-box-button">&#128269;</button>
       </div>
-      <div className="pastries-wrapper">
+      {searchError &&
+        <div className="message">Aucune pâtisserie trouvée pour "{searchQuery}".</div>
+      }
+      {!searchError && <div className="pastries-wrapper">
         <PastryItem data={displayData} onChange={handlePastriesChange} />
       </div>
+      }
     </div>
   );
 };
