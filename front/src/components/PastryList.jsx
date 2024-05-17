@@ -1,21 +1,34 @@
 import { useEffect } from 'react';
+import { useState } from 'react';
 import {
   useGetAllPastriesQuery,
   useGetAllPastryCountQuery,
   useAddOnePastryMutation,
   useDeletePastryByIdMutation,
+  useGetPastryBySearchQuery,
 } from 'src/features/pastries-api/pastriesApi.jsx';
 
 import PastryItem from './PastryItem';
 import './PastryList.css';
 
 const PastryList = () => {
+  const [searchQuery, setSearchQuery] = useState('');
   const { data, error, isLoading, refetch: refetchAllPastries } = useGetAllPastriesQuery();
   const { data: pastriesCount, refetch: refetchPastriesCount } = useGetAllPastryCountQuery();
+  const {data: pastriesSearch, refetch: refetchPastriesSearch } = useGetPastryBySearchQuery(searchQuery, {
+    skip: !searchQuery});
 
   const handlePastriesChange = () => {
     refetchAllPastries();
     refetchPastriesCount();
+  }
+
+  const handlePastriesSearchChange = (e) =>{
+    setSearchQuery(e.target.value)
+  }
+  const handlePastriesSearch =() =>{
+    if(searchQuery)
+    refetchPastriesSearch();
   }
 
   useEffect(() => {
@@ -31,7 +44,10 @@ const PastryList = () => {
     return <div className="message">{error.message}</div>;
   }
 
-  if (!data || data.length === 0) {
+const displayData = searchQuery && pastriesSearch ? [pastriesSearch] : data;
+
+
+  if (!displayData || displayData.length === 0) {
     return <div className="message">Pas de pâtisseries disponibles</div>;
   }
 
@@ -44,11 +60,13 @@ const PastryList = () => {
           type="text"
           placeholder="Rechercher des pâtisseries"
           className="search-box-input"
+          value={searchQuery}
+          onChange={handlePastriesSearchChange}
         />
-        <button className="search-box-button">&#128269;</button>
+        <button onClick={handlePastriesSearch}  className="search-box-button">&#128269;</button>
       </div>
       <div className="pastries-wrapper">
-        <PastryItem data={data} onChange={handlePastriesChange} />
+        <PastryItem data={displayData} onChange={handlePastriesChange} />
       </div>
     </div>
   );

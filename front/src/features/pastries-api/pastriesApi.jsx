@@ -13,7 +13,7 @@ export const pastriesApi = createApi({
       query: () => `pastry/pastry/${id}`,
     }),
     getPastryBySearch: builder.query({
-      query: () => `pastry/pastries-search/${word}`,
+      query: (word) => `pastries-search/${word}`,
     }),
     getAllPastryWithPagination: builder.query({
       query: ({ offset = 0, limit }) => `pastry/pastries/${offset}/${limit}`,
@@ -28,10 +28,10 @@ export const pastriesApi = createApi({
     addOnePastry: builder.mutation({
       // {name: 'name', quantity: 'quantity', choice: 'choice', image: 'image'}
       // required: name, quantity
-      query: (pastry) => ({
+      query: (formData) => ({
         url: 'pastry',
         method: 'POST',
-        body: pastry,
+        body: formData,
       }),
     }),
     editPastryById: builder.mutation({

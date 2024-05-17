@@ -5,7 +5,7 @@ import { useState } from 'react';
 const PastryPopup = ({ pastry, onClose, onEdit }) => {
   const [pastryName, setPastryName] = useState(pastry.name);
   const [pastryQuantity, setPastryQuantity] = useState(pastry.quantity);
-  const [pastryImage, setPastryImage] = useState(pastry.quantity);
+  const [selectedPastryImage, setSelectedPastryImage] = useState(pastry.image);
   const [editPastryRequest] = useEditPastryByIdMutation();
 
   const handlePastryEdit = async () => {
@@ -19,7 +19,7 @@ const PastryPopup = ({ pastry, onClose, onEdit }) => {
   }
 
    const handleImageChange = (e) => {
-    setPastryImage(e.target.value);
+    setSelectedPastryImage(e.target.value);
   }
 
   const handleQuantityChange = (e) => {
