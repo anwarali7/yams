@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../images/rolling-dices-svgrepo-com.svg';
 import { useMeQuery, useLogoutMutation } from 'src/services/authApi.jsx';
@@ -14,6 +14,7 @@ const SharedLayout = () => {
   const loginData = useSelector((state) => state.login);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = async () => {
     try {
@@ -36,6 +37,10 @@ const SharedLayout = () => {
     }
   }, [meData]);
 
+   const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div>
       <nav className="nav-container">
@@ -43,7 +48,7 @@ const SharedLayout = () => {
           <a href="/"><img src={logo} alt="logo" width="40" height="40" />
           <h2>Yams</h2></a>
         </div>
-        <div className="nav-bar">
+        <div className={`nav-bar ${isMenuOpen ? 'open' : ''}`} onClick={() => setIsMenuOpen(false)}>
           <NavLink to="/" end className="navLink">
             Accueil
           </NavLink>
@@ -73,6 +78,11 @@ const SharedLayout = () => {
               Se connecter
             </NavLink>
           )}
+        </div>
+        <div className="burger-menu" onClick={toggleMenu}>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
       </nav>
 

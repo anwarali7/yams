@@ -2,24 +2,26 @@
   background-color: #222222;
 }
 
-body{
+body {
   display: flex;
   flex-direction: column;
 }
+
 .footer {
-  width: 100%; 
+  width: 100%;
   padding: 5px;
   margin: 0;
   background-color: #df1160;
   text-align: center;
-  
+
 }
 
 .nav-container {
   display: flex;
   padding: 0 50px;
   justify-content: space-between;
-  align-items: center; /*centers the flex-items along cross axis*/
+  align-items: center;
+  /*centers the flex-items along cross axis*/
   background-color: #df1160;
   height: 10vh;
 }
@@ -37,13 +39,13 @@ body{
   text-decoration: none;
   color: white;
   font-weight: 500;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 .navLink:focus,
-.navLink:hover{
-transform: scale(1.1); 
-color:white; 
+.navLink:hover {
+  transform: scale(1.1);
+  color: white;
 }
 
 
@@ -51,7 +53,7 @@ color:white;
   color: white;
   padding: 50px 50px;
   margin-bottom: 5px;
-  flex: 1; 
+  flex: 1;
   min-height: calc(100vh - 10vh - 71px);
 }
 
@@ -61,7 +63,7 @@ color:white;
   align-items: center;
 }
 
-.logo a{
+.logo a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,28 +71,28 @@ color:white;
   color: white;
   padding: 8px 16px;
   border-radius: 4px;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 .logo a:hover,
-.logo a:focus{
+.logo a:focus {
   transform: scale(1.1);
   color: white;
 }
 
 .connection {
-   display: inline-flex;
+  display: inline-flex;
   align-items: center;
 }
 
-.user-info{
+.user-info {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
 
-.user-info button{
+.user-info button {
   background-color: #df1160;
   border-radius: 10px;
   padding: 5px;
@@ -103,4 +105,54 @@ color:white;
 .user-info button:focus,
 .user-info button:hover {
   background-color: #b80a4c;
+}
+
+/* Burger Menu */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-menu .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  .nav-bar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    background-color: #df1160;
+  }
+
+  .navLink {
+    text-align: center;
+  }
+
+  .nav-bar.open {
+    display: flex;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+   .connection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navLink {
+    width: 100%;
+    text-align: center;
+  }
 }
