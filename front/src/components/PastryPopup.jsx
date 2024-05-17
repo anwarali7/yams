@@ -35,7 +35,7 @@ const PastryPopup = ({ pastry, onClose, onEdit }) => {
       </div>
       <div className="form-field">
         <label htmlFor="pastry-img">Url d'image</label>
-        <input type="file" id="pastry-img" accept="src/image/*" value={pastryImage} onChange={handleImageChange}/>
+        <input type="file" id="pastry-img" accept="src/image/*"/>
       </div>
       <div className="form-field">
         <label htmlFor="pastry-quantity">Quantité</label>
