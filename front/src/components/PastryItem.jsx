@@ -38,8 +38,8 @@ const PastryItem = ({ data, onChange }) => {
             <button type="button" onClick={() => {
               handleEditPastry(pastry)
             }} >Modifier</button>
-            <button type="button" onClick={() => {
-              deletePastry(pastry.id)
+            <button type="button" onClick={async () => {
+              await deletePastry(pastry.id)
               onChange()
             }}>Supprimer</button>
           </div>
