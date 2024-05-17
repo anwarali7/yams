@@ -142,6 +142,13 @@ const Game = () => {
     });
   }
 
+  const instantWin = () => {
+    setResults(["yams", "yams", "yams"]);
+    setDices([6, 6, 6, 6, 6]);
+    setRollsLeft(0);
+    setPastriesAmountWon(3);
+  }
+
   return (
     <div className={styles["game-page"]}>
       <div className={styles["game-layout"]}>
@@ -176,6 +183,7 @@ const Game = () => {
           <img src={logo} alt="rolling dices" />
           {rollsLeft} essai(s) restant(s)
         </button>
+        <button type="button" onClick={instantWin}>Gagner instantanément!</button>
       </div>
       {isGameWon() && (
         <div className={styles["win-message"]}>
