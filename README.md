@@ -11,6 +11,7 @@ Les fonctionnalités sont :
 Les technologies utilisées sont :
 
 - React, offrant une expérience utilisateur fluide.
+- React-Router, permettant une navigation dynamique et efficace entre les différentes pages de l'application.
 - React Toolkit, pour la gestion cohérente de l’état de l’application.
 - RTK Query pour la gestion des requêtes API, garantissant une intégration simple et efficace de l’API Yams fournie.
 
