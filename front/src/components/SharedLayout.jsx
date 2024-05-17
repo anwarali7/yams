@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, logout } from 'src/features/login/loginSlice.jsx';
 
 import './SharedLayout.css';
-import user from '../images/user.png';
+import { user, exit } from 'src/images';
 
 const SharedLayout = () => {
   const { data: meData, refetch: meRefetch } = useMeQuery();
@@ -32,12 +32,12 @@ const SharedLayout = () => {
   }, [loginData, meRefetch]);
 
   useEffect(() => {
-    if(meData && meData.id && !loginData.loggedIn) {
+    if (meData && meData.id && !loginData.loggedIn) {
       dispatch(login(meData));
     }
   }, [meData]);
 
-   const toggleMenu = () => {
+  const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -46,7 +46,7 @@ const SharedLayout = () => {
       <nav className="nav-container">
         <div className="logo">
           <a href="/"><img src={logo} alt="logo" width="40" height="40" />
-          <h2>Yams</h2></a>
+            <h2>Yams</h2></a>
         </div>
         <div className={`nav-bar ${isMenuOpen ? 'open' : ''}`} onClick={() => setIsMenuOpen(false)}>
           <NavLink to="/" end className="navLink">
@@ -59,9 +59,9 @@ const SharedLayout = () => {
             Résultats
           </NavLink>
           {loginData && loginData.loggedIn && (
-          <NavLink to="/dashboard" className="navLink">
-            Tableau de bord
-          </NavLink>
+            <NavLink to="/dashboard" className="navLink">
+              Tableau de bord
+            </NavLink>
           )}
         </div>
         <div className="connection">
@@ -69,8 +69,8 @@ const SharedLayout = () => {
           {loginData && loginData.loggedIn ? (
             <div className="user-info">
               <p>{meData?.email}</p>
-              <button type="button" onClick={handleLogout}>
-                Se déconnecter
+              <button type="button" onClick={handleLogout} title="Se déconnecter">
+                <img src={exit} alt="exit-icon" width="20px" height="20px" />
               </button>
             </div>
           ) : (

@@ -81,9 +81,12 @@ body {
 }
 
 .connection {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
+
+
 
 .user-info {
   display: flex;
@@ -122,6 +125,11 @@ body {
 }
 
 @media (max-width: 768px) {
+
+  .nav-container {
+    padding: 0;
+  }
+
   .nav-bar {
     display: none;
     flex-direction: column;
@@ -142,17 +150,23 @@ body {
 
   .burger-menu {
     display: flex;
+    margin-right: 15px;
   }
 
-   .connection {
+  .connection {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     width: 100%;
   }
 
+
   .navLink {
-    width: 100%;
+
     text-align: center;
+  }
+
+  .connection .navLink {
+    padding: 0;
   }
 }

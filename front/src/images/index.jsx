@@ -13,5 +13,7 @@ import brioche from 'src/images/brioche.webp';
 import macarons from 'src/images/macaron.webp';
 import loupe from 'src/images/loupe.png';
 import exclamationPoint from 'src/images/risk-icon.svg';
+import exit from 'src/images/exit.svg';
+import user from 'src/images/user.png';
 
-export { logo, diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix, diceQuestion, eclair, fondant, tartelette, brioche, macarons, loupe, exclamationPoint };
+export { logo, diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix, diceQuestion, eclair, fondant, tartelette, brioche, macarons, loupe, exclamationPoint, exit, user };

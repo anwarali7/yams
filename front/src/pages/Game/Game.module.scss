@@ -89,7 +89,7 @@
   border-radius: 6px;
   font-size: 1.2rem;
   cursor: pointer;
-  white-space: nowrap;
+  // white-space: nowrap;
 
   &:hover {
     filter: grayscale(5%);
@@ -101,7 +101,7 @@
   }
 }
 
-.secret-btn{
+.secret-btn {
   background-color: rgba(109, 9, 129, 0.939);
   border: none;
   color: #ffffff;

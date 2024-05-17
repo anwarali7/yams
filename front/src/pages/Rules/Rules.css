@@ -1,40 +1,43 @@
-.rules-list{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 50px;
-
+.rules-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
 }
 
-.rules-list-box{
-    padding: 20px;
-width:380px;
-height:380px;
-background-color: #FFB2B2;
-border-radius: 15px;
-color: black;
+.rules-list-box {
+  padding: 20px;
+  width: 380px;
+  height: 380px;
+  background-color: #FFB2B2;
+  border-radius: 15px;
+  color: black;
 }
 
-
-.attention-box img{
-    float: left;
-    
-    margin-right: 20px;
+.attention-box img {
+  float: left;
+  margin-right: 20px;
 }
 
-.btn-goback{
- width: 50%;
-  height: 60px;
+.btn-goback {
+  padding: 10px 20px;
   background-color: #df1160;
   border-radius: 10px;
-  font-size: 36px;
+  font-size: 24px;
   cursor: pointer;
 }
-
-
 
 .btn-goback:focus,
 .btn-goback:hover {
   background-color: #b80a4c;
+}
+
+@media screen and (max-width: 768px) {
+  
+  .rules-list-box {
+    height: 100%;
+  }
+  
 }
