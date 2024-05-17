@@ -3,8 +3,9 @@ import './PastryPopup.css';
 import { useState } from 'react';
 
 const PastryPopup = ({ pastry, onClose, onEdit }) => {
-  const [pastryName, setPasrtyName] = useState(pastry.name);
-  const [pastryQuantity, setPasrtyQuantity] = useState(pastry.quantity);
+  const [pastryName, setPastryName] = useState(pastry.name);
+  const [pastryQuantity, setPastryQuantity] = useState(pastry.quantity);
+  const [pastryImage, setPastryImage] = useState(pastry.quantity);
   const [editPastryRequest] = useEditPastryByIdMutation();
 
   const handlePastryEdit = async () => {
@@ -14,11 +15,15 @@ const PastryPopup = ({ pastry, onClose, onEdit }) => {
   }
 
   const handleNameChange = (e) => {
-    setPasrtyName(e.target.value);
+    setPastryName(e.target.value);
+  }
+
+   const handleImageChange = (e) => {
+    setPastryImage(e.target.value);
   }
 
   const handleQuantityChange = (e) => {
-    setPasrtyQuantity(e.target.value);
+    setPastryQuantity(e.target.value);
   }
 
   return (<div className="modal-overlay">
@@ -30,7 +35,7 @@ const PastryPopup = ({ pastry, onClose, onEdit }) => {
       </div>
       <div className="form-field">
         <label htmlFor="pastry-img">Url d'image</label>
-        <input type="file" id="pastry-img" accept="src/image/*" />
+        <input type="file" id="pastry-img" accept="src/image/*" value={pastryImage} onChange={handleImageChange}/>
       </div>
       <div className="form-field">
         <label htmlFor="pastry-quantity">Quantité</label>
