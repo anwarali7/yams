@@ -101,6 +101,27 @@
   }
 }
 
+.secret-btn{
+  background-color: rgba(109, 9, 129, 0.939);
+  border: none;
+  color: #ffffff;
+  font-size: 14px !important;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    filter: grayscale(5%);
+  }
+
+  &[disabled] {
+    filter: grayscale(35%);
+    cursor: not-allowed;
+  }
+}
+
 .win-message {
   font-size: 1.5rem;
   font-weight: bold;

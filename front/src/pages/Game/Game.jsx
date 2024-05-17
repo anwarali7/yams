@@ -183,7 +183,7 @@ const Game = () => {
           <img src={logo} alt="rolling dices" />
           {rollsLeft} essai(s) restant(s)
         </button>
-        <button type="button" onClick={instantWin}>Gagner instantanément!</button>
+        <button type="button" onClick={instantWin} className={styles["secret-btn"]}> 🤫 Gagner instantanément!</button>
       </div>
       {isGameWon() && (
         <div className={styles["win-message"]}>
