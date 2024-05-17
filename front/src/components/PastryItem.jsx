@@ -19,12 +19,19 @@ const PastryItem = ({ data, onChange }) => {
     setShowModal(false)
   }
 
+  const makeImageSrc = (imagePath) => {
+    if (!imagePath.startsWith('http')) {
+      return `http://localhost:3001/uploads/images/${imagePath}`
+    }
+    return imagePath
+  }
+
   return (
     <>
       {data.map((pastry) => (
         <div className="pastry-card" key={pastry.id}>
           {/* <img src={fondant} /> */}
-          <img src={pastry.image} />
+          <img src={makeImageSrc(pastry.image)} alt={pastry.name} />
           <div>{pastry.name}</div>
           <div>Quantité: {pastry.quantity}</div>
           <div className="btn-pastry-actions">
