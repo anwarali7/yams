@@ -2,6 +2,19 @@
   background-color: #222222;
 }
 
+body{
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  width: 100%; 
+  padding: 5px;
+  margin: 0;
+  background-color: #df1160;
+  text-align: center;
+  
+}
+
 .nav-container {
   display: flex;
   padding: 0 50px;
@@ -37,6 +50,9 @@ color:white;
 .main-content {
   color: white;
   padding: 50px 50px;
+  margin-bottom: 5px;
+  flex: 1; 
+  min-height: calc(100vh - 10vh - 71px);
 }
 
 .logo {

@@ -79,6 +79,10 @@ const SharedLayout = () => {
       <div className="main-content">
         <Outlet />
       </div>
+
+      <footer className="footer">
+        <p>Cette application a été développée par une équipe incroyable composée d'<a href="https://github.com/anwarali7">Ali 🧑🏻‍💻</a> et <a href="https://github.com/MarinaSigida">Marina 👩🏻‍💻</a>.</p>
+      </footer>
     </div>
   );
 };

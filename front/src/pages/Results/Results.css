@@ -4,6 +4,10 @@
   margin-bottom: 20px;
 }
 
+.you-won-text p{
+  margin: 0;
+}
+
 .prizes-container {
   display: flex;
   justify-content: center;
@@ -42,8 +46,8 @@
   }
 
   .prize-img-container {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
   }
 
   .prize-title {
