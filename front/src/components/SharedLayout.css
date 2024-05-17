@@ -24,6 +24,13 @@
   text-decoration: none;
   color: white;
   font-weight: 500;
+  transition: all 0.3s ease; 
+}
+
+.navLink:focus,
+.navLink:hover{
+transform: scale(1.1); 
+color:white; 
 }
 
 
@@ -34,7 +41,25 @@
 
 .logo {
   display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+.logo a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease; 
+}
+
+.logo a:hover,
+.logo a:focus{
+  transform: scale(1.1);
+  color: white;
 }
 
 .connection {

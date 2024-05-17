@@ -40,8 +40,8 @@ const SharedLayout = () => {
     <div>
       <nav className="nav-container">
         <div className="logo">
-          <img src={logo} alt="logo" width="40" height="40" />
-          <h2>Yams</h2>
+          <a href="/"><img src={logo} alt="logo" width="40" height="40" />
+          <h2>Yams</h2></a>
         </div>
         <div className="nav-bar">
           <NavLink to="/" end className="navLink">
