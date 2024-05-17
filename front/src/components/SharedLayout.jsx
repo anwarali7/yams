@@ -3,7 +3,7 @@ import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../images/rolling-dices-svgrepo-com.svg';
 import { useMeQuery, useLogoutMutation } from 'src/services/authApi.jsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout } from 'src/features/login/loginSlice.jsx';
+import { login, logout } from 'src/features/login/loginSlice.jsx';
 
 import './SharedLayout.css';
 import user from '../images/user.png';
@@ -29,6 +29,12 @@ const SharedLayout = () => {
   useEffect(() => {
     meRefetch();
   }, [loginData, meRefetch]);
+
+  useEffect(() => {
+    if(meData && meData.id && !loginData.loggedIn) {
+      dispatch(login(meData));
+    }
+  }, [meData]);
 
   return (
     <div>
