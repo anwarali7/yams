@@ -1,7 +1,6 @@
 .pastry-card {
   background-color: #df1160;
   width: 250px;
-  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
